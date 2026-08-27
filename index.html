@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<!-- الصفحة كلها بالعربي، فبنحدد الاتجاه RTL على الـ html tag نفسه -->
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Craft</title>
+
+    <!--
+        استدعاء خط Cairo من Google Fonts
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- استدعاء مكتبة Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- ملف التنسيق الخاص بينا -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================
+        1) الشريط العلوي (Navbar)
+        - الشعار نص بسيط "Pixel Craft"
+        - روابط تنقل + زرار همبرجر يظهر في الموبايل بس
+    ============================================ -->
+    <header class="navbar">
+        <div class="container navbar__inner">
+
+            <!-- الشعار (Text Logo) -->
+            <a href="#home" class="navbar__logo">Pixel<span>Craft</span></a>
+
+            <!-- قائمة الروابط - بتتحول لقايمة منسدلة في الموبايل عن طريق JS -->
+            <nav class="navbar__nav" id="navMenu">
+                <ul class="navbar__links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#portfolio">معرض الأعمال</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+
+            <!-- زرار فتح/قفل القايمة في شاشات الموبايل (Hamburger) -->
+            <button class="navbar__toggle" id="navToggle" aria-label="فتح القائمة">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- 2) القسم الرئيسي (Hero Section)
+        عنوان رئيسي + نص فرعي + زرار CTA-->
+    <section class="hero" id="home">
+        <div class="container hero__inner">
+            <h1 class="hero__title">
+                نحول تصاميمك إلى <span class="hero__title--accent">واقع برمجيات</span> عالي الجودة
+            </h1>
+
+            <p class="hero__subtitle">
+                نحوّل ملفات التصميم إلى واجهات ويب سريعة الأداء، بكود نظيف
+                ومنظم يسهل التعامل معه وتطويره مستقبلاً.
+            </p>
+
+            <!-- زرار الدعوة لاتخاذ إجراء (Call To Action) -->
+            <a href="#contact" class="btn btn--primary hero__cta">
+                🚀 ابدأ مشروعك الآن
+            </a>
+        </div>
+    </section>
+
+    <!--
+        3) شبكة المميزات (Features Grid)
+        - 3 كروت، كل كارت له أيقونة + عنوان + نص قصير
+    ============================================ -->
+    <section class="features" id="services">
+        <div class="container">
+
+            <h2 class="section__title">ليه تختار Pixel Craft؟</h2>
+
+            <div class="features__grid">
+
+                <!-- الكارت الأول: كود نظيف -->
+                <article class="feature-card">
+                    <div class="feature-card__icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <h3 class="feature-card__title">كود نظيف ومنظم</h3>
+                    <p class="feature-card__text">
+                        نكتب كود مرتب ومعنون بتعليقات واضحة، عشان يبقى سهل
+                        القراءة والتعديل عليه في أي وقت.
+                    </p>
+                </article>
+
+                <!-- الكارت الثاني: تجاوب تام -->
+                <article class="feature-card">
+                    <div class="feature-card__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3 class="feature-card__title">تجاوب تام مع كافة الشاشات</h3>
+                    <p class="feature-card__text">
+                        الواجهة بتشتغل وتظهر بشكل ممتاز على الموبايل والتابلت
+                        والشاشات الكبيرة من غير أي مشاكل.
+                    </p>
+                </article>
+
+                <!-- الكارت الثالث: سرعة الأداء -->
+                <article class="feature-card">
+                    <div class="feature-card__icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 class="feature-card__title">سرعة تحميل فائقة</h3>
+                    <p class="feature-card__text">
+                        نعتمد على كود خفيف بدون مكتبات زايدة، عشان الصفحة
+                        تفتح بسرعة وتديك تجربة مستخدم مريحة.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!--
+        4) التذييل (Footer)
+        - حقوق النشر + روابط تواصل اجتماعي (افتراضية)-->
+    <footer class="footer" id="contact">
+        <div class="container footer__inner">
+
+            <p class="footer__text">
+                &copy; <span id="currentYear"></span> Pixel Craft. جميع الحقوق محفوظة.
+            </p>
+
+            <!-- روابط التواصل الاجتماعي - قيم افتراضية (#) لحد ما تتحدد الروابط الحقيقية -->
+            <div class="footer__social">
+                <a href="#" aria-label="فيسبوك"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="انستجرام"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="لينكدإن"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ملف الجافاسكريبت - بنحطه في آخر الصفحة عشان الصفحة تفتح بسرعة -->
+    <script src="script.js"></script>
+</body>
+</html>
